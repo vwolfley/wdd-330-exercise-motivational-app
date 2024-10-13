@@ -1,0 +1,42 @@
+{
+  "name": "wdd-330-exercise-motivational-app",
+  "version": "1.0.0",
+  "date": "2024-10-12",
+  "created": "2024-10-12",
+  "description": "The goal of this project is to create a simple app that offers workout ideas and personalized motivational messages to help users stay motivated and achieve their fitness goals.",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --emptyOutDir",
+    "preview": "vite preview",
+    "lint": "eslint *.js src/**/*.js",
+    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
+    "test": "jest"
+  },
+  "author": "Vern Wolfley",
+  "contributors": [],
+  "repository": "https://github.com/vwolfley/wdd-330-exercise-motivational-app",
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "jest": "^29.7.0",
+    "prettier": "^3.3.3",
+    "vite": "^5.4.7"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "browserslist": [
+    "last 3 and_chr versions",
+    "last 3 chrome versions",
+    "last 3 opera versions",
+    "last 3 ios_saf versions",
+    "last 3 safari versions"
+  ]
+}

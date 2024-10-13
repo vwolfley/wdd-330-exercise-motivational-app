@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="../favicon.ico" />
+        <title>Exercise App</title>
+        <meta name="description" content="Exercise and Motivational App" />
+        <meta name="author" content="Vern Wolfley" />
+        <meta name="copyright" content="Copyright 2024" />
+        <meta name="theme-color" content="#021f41" />
+
+        <link rel="stylesheet" href="./exercise.css" />
+    </head>
+
+    <body>
+        <header id="header">
+            <nav class="nav">
+                <div class="nav-title">
+                    <img
+                        src="../images/exercise_icon.png"
+                        alt="exercise logo"
+                    />
+                    <h1>Exercise Info and Motivational App</h1>
+                </div>
+                <div class="nav-menu">
+                    <button class="nav-toggle">
+                        <svg
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <title>Menu</title>
+                            <path
+                                d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
+                            />
+                        </svg>
+                    </button>
+                </div>
+                <div class="nav-links">
+                    <div>
+                        <a
+                            href="javascript:void(0);"
+                            id="openModal"
+                            class="link"
+                        >
+                            About
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section id="exerciseInfo">
+                <h2>Let's Get Motivated!</h2>
+                <p>
+                    First, pick an exercise type, choose a muscle to focus on,
+                    and set the difficulty level. Then we'll suggest some
+                    options for you along with motivational content to keep you
+                    going!
+                </p>
+
+                <form id="exerciseForm">
+                    <label for="exerciseType">Choose your exercise type:</label>
+                    <select id="exerciseType" name="exerciseType">
+                        <option value="" disabled selected>Select an exercise type</option>
+                        <option value="cardio">Cardio</option>
+                        <option value="olympic_weightlifting">
+                            Olympic Weightlifting
+                        </option>
+                        <option value="plyometrics">Plyometrics</option>
+                        <option value="powerlifting">Powerlifting</option>
+                        <option value="strength">Strength</option>
+                        <option value="stretching">Stretching</option>
+                        <option value="strongman">Strongman</option>
+                    </select>
+
+                    <label for="muscle">Choose a muscle:</label>
+                    <input
+                        type="text"
+                        id="muscle"
+                        name="muscle"
+                        placeholder="Enter muscle"
+                    />
+
+                    <label for="difficulty"
+                        >Choose your difficulty level:</label
+                    >
+                    <select id="difficulty" name="difficulty">
+                        <option value="" disabled selected>Select difficulty</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="expert">Expert</option>
+                    </select>
+
+                    <button type="submit">Submit</button>
+                </form>
+                <div>
+                    <p>Possible values for muscles are:</p>
+                    <span>
+                        abdominals, adductors, biceps, calves, chest, forearms,
+                        glutes, hamstrings, lats, lower_back, middle_back, neck,
+                        quadriceps, shoulders, traps, triceps
+                    </span>
+                </div>
+            </section>
+            <div class="centered">
+                <section class="cards"></section>
+            </div>
+        </main>
+
+        <script type="module" src="./exercise.js"></script>
+    </body>
+</html>

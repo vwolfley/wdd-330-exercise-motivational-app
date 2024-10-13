@@ -1,0 +1,27 @@
+{
+    "name": "Single Page Apps",
+    "short_name": "Apps Home",
+    "description": "Single Page Apps showing api functions",
+    "lang": "en-US",
+    "start_url": "https://vwolfley.github.io/",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+          },
+        {
+            "src": "images/favicon/android-chrome-192x192.webp",
+            "sizes": "192x192",
+            "type": "image/webp"
+        },
+        {
+            "src": "images/favicon/android-chrome-512x512.webp",
+            "sizes": "512x512",
+            "type": "image/webp"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
