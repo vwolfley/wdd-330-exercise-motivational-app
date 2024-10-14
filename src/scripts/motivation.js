@@ -2,7 +2,8 @@ export function motivation() {
     // Listen for form submission
     motivationApiFetch();
     async function motivationApiFetch() {
-        const url = `https://zenquotes.io/api/quotes/`;
+        // const url = `https://zenquotes.io/api/quotes/`;
+        const url = 'https://type.fit/api/quotes';
         try {
             const response = await fetch(url);
             if (response.ok) {

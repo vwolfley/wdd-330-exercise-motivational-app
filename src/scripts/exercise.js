@@ -1,5 +1,7 @@
 import { motivation } from "./motivation";
+
 export function exercise() {
+
     // Listen for form submission
     document
         .getElementById("exerciseForm")
@@ -16,7 +18,7 @@ export function exercise() {
                 .value.trim();
 
             // Call the motivation function
-            motivation();
+            // motivation();
 
             // Call the API function with the city name
             exerciseApiFetch(exerciseType, muscle, difficulty);
@@ -95,3 +97,5 @@ function displayResults(result) {
     // Update the container once, after the loop
     document.querySelector(".cards").innerHTML = cardsHTML;
 }
+
+
