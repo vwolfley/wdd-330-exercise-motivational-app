@@ -1,24 +1,27 @@
-import { aboutModal } from "./aboutModal.js";
+import { motivation } from "./motivation";
+export function exercise() {
+    // Listen for form submission
+    document
+        .getElementById("exerciseForm")
+        .addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
 
-// Call the aboutModal function
-aboutModal();
+            // Get the value from the input field
+            const muscle = document.getElementById("muscle").value.trim();
+            const exerciseType = document
+                .getElementById("exerciseType")
+                .value.trim();
+            const difficulty = document
+                .getElementById("difficulty")
+                .value.trim();
 
-// Listen for form submission
-document
-    .getElementById("exerciseForm")
-    .addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the form from submitting the traditional way
+            // Call the motivation function
+            motivation();
 
-        // Get the value from the input field
-        const muscle = document.getElementById("muscle").value.trim();
-        const exerciseType = document
-            .getElementById("exerciseType")
-            .value.trim();
-        const difficulty = document.getElementById("difficulty").value.trim();
-
-        // Call the API function with the city name
-        exerciseApiFetch(exerciseType, muscle, difficulty);
-    });
+            // Call the API function with the city name
+            exerciseApiFetch(exerciseType, muscle, difficulty);
+        });
+}
 
 // const muscle = "biceps";
 // const type = "strength";

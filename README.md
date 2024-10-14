@@ -39,10 +39,22 @@ https://coolors.co/009cde-021f41-edeef0-29f1c-09814a
 
 #### Typography
 
-##### Headings Font
+-   Headings Font - Merriweather
+-   Body Font - Roboto
 
-• Merriweather
+### Attributions
 
-#### Body Font
+<a href="https://www.freepik.com/icon/muscle_7493114">Icon by Peerapak Takpho</a>
+<a href="https://www.freepik.com/icon/muscle_7493103">Icon by Peerapak Takpho</a>
+Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a>
 
-• Roboto
+### External API Data Source
+
+Exercise API
+
+-   [Exercises@APINinjas](https://api-ninjas.com/api/exercises)
+
+Motivational Quotes API
+
+-   [ZenQuotesIO](https://zenquotes.io/)
+-   [CodeCamp](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
