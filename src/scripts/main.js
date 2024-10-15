@@ -1,11 +1,15 @@
 import { aboutModal } from "./aboutModal.js";
 import { exercise } from "./exercise.js";
+import {motivation} from "./motivation.js";
 
 // Call the aboutModal function
 aboutModal();
 
 // Call the exercise function
 exercise();
+
+// Call the motivation function
+// motivation();
 
 // Calls the data from json file
 async function createMuscleList() {
@@ -49,7 +53,7 @@ function renderMuscleList(result) {
         button.addEventListener("click", () => {
             // Get the muscle name from the button's data attribute
             const selectedMuscle = button.getAttribute("data-muscle");
-            console.log("Selected muscle:", selectedMuscle);
+            // console.log("Selected muscle:", selectedMuscle);
             // Set the muscle name in the input field
             muscleInput.value = selectedMuscle;
 

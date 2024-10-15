@@ -58,3 +58,4 @@ Motivational Quotes API
 
 -   [ZenQuotesIO](https://zenquotes.io/)
 -   [CodeCamp](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
+-   [Quotes@APINinjas](https://api-ninjas.com/api/quotes)

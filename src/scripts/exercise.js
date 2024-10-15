@@ -17,7 +17,7 @@ export function exercise() {
                 .value.trim();
 
             // Call the motivation function
-            // motivation();
+            motivation();
 
             // Call the API function with the city name
             exerciseApiFetch(exerciseType, muscle, difficulty);
@@ -29,7 +29,7 @@ export function exercise() {
 // const difficulty = "easy";
 // The function to call the location api
 async function exerciseApiFetch(type, muscle, difficulty) {
-    console.log(muscle);
+    // console.log(muscle);
 
     const url = `https://api.api-ninjas.com/v1/exercises?type=${type}&muscle=${muscle}&difficulty=${difficulty}`;
 
@@ -44,8 +44,12 @@ async function exerciseApiFetch(type, muscle, difficulty) {
         const response = await fetch(url, options);
         if (response.ok) {
             const result = await response.json();
-            console.log(result);
-            displayResults(result);
+            // console.log(result);
+            if (result.length === 0) {
+                displayError();
+            } else {
+                displayResults(result);
+            }
         } else {
             throw new Error(await response.text());
         }
@@ -62,19 +66,28 @@ async function exerciseApiFetch(type, muscle, difficulty) {
 // type: "strength";
 
 function displayResults(result) {
-    let cardsHTML = ""; // Accumulate the HTML here
+    let cardsHTML = "";
 
     result.forEach((workout) => {
+        let diffClass = "";
+        if (workout.difficulty === "beginner") {
+            diffClass = "beginner";
+        } else if (workout.difficulty === "intermediate") {
+            diffClass = "intermediate";
+        } else if (workout.difficulty === "expert") {
+            diffClass = "expert";
+        }
+
         const workoutCardTemplate = `
             <article class="card">
             <h2>${workout.name}</h2>
             <div class="card-info">
             <div class="card1">
                 <ul>
-                    <li><strong>Difficulty:</strong> ${
+                    <li><strong>Difficulty:</strong> <span class="${diffClass}">${
                         workout.difficulty.charAt(0).toUpperCase() +
                         workout.difficulty.slice(1)
-                    }</li>
+                    }</span></li>
                     <li><strong>Equipment:</strong> ${
                         workout.equipment.charAt(0).toUpperCase() +
                         workout.equipment.slice(1)
@@ -96,9 +109,22 @@ function displayResults(result) {
             </article>
         `;
 
-        cardsHTML += workoutCardTemplate; // Add to the accumulated HTML
+        cardsHTML += workoutCardTemplate;
     });
 
     // Update the container once, after the loop
     document.querySelector(".cards").innerHTML = cardsHTML;
+}
+
+// Display an error message if no results are found
+function displayError() {
+    document.querySelector(".cards").innerHTML = `
+        <article class="card">
+            <div class=card-error>
+                <h2>No Information Available</h2>
+                <p>Sorry, There were no Exercise found for your selection.</p>
+                <p>Please make another selection.
+            </div>
+        </article>
+    `;
 }
