@@ -1,7 +1,6 @@
 import { motivation } from "./motivation";
 
 export function exercise() {
-
     // Listen for form submission
     document
         .getElementById("exerciseForm")
@@ -68,7 +67,9 @@ function displayResults(result) {
     result.forEach((workout) => {
         const workoutCardTemplate = `
             <article class="card">
-                <h2>${workout.name}</h2>
+            <h2>${workout.name}</h2>
+            <div class="card-info">
+            <div class="card1">
                 <ul>
                     <li><strong>Difficulty:</strong> ${
                         workout.difficulty.charAt(0).toUpperCase() +
@@ -87,7 +88,11 @@ function displayResults(result) {
                         workout.muscle.slice(1)
                     }</li>
                 </ul>
-                <p>Instructions: ${workout.instructions}</p>
+                </div>
+                <div class="card2">
+                <p><strong>Instructions:</strong> ${workout.instructions}</p>
+                </div>
+                </div>
             </article>
         `;
 
@@ -97,5 +102,3 @@ function displayResults(result) {
     // Update the container once, after the loop
     document.querySelector(".cards").innerHTML = cardsHTML;
 }
-
-
