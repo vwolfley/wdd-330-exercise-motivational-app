@@ -41,7 +41,7 @@ body {
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
-    color: var(--secondary-color)
+    color: var(--secondary-color);
 }
 
 h1,
@@ -390,7 +390,7 @@ button[type="submit"] {
 .card-quote {
     margin: 0 10px;
     font-size: 1.25rem;
-    color: var(--secondary-color)
+    color: var(--secondary-color);
 }
 .card-author {
     margin: 0 10px;
@@ -399,20 +399,20 @@ button[type="submit"] {
     color: var(--tertiary-color);
 }
 .beginner {
- background-color: var(--beginner);
- color: white;
- padding: 0.25rem .35rem;
- border-radius: 5px;
+    background-color: var(--beginner);
+    color: white;
+    padding: 0.25rem 0.35rem;
+    border-radius: 5px;
 }
 .intermediate {
- background-color: var(--intermediate);
- color: white;
- padding: 0.25rem .35rem;
- border-radius: 5px;
+    background-color: var(--intermediate);
+    color: white;
+    padding: 0.25rem 0.35rem;
+    border-radius: 5px;
 }
 .expert {
- background-color: var(--expert);
- color: white;
- padding: 0.25rem .35rem;
- border-radius: 5px;
-}   
+    background-color: var(--expert);
+    color: white;
+    padding: 0.25rem 0.35rem;
+    border-radius: 5px;
+}

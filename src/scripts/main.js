@@ -1,15 +1,11 @@
 import { aboutModal } from "./aboutModal.js";
 import { exercise } from "./exercise.js";
-import {motivation} from "./motivation.js";
 
 // Call the aboutModal function
 aboutModal();
 
 // Call the exercise function
 exercise();
-
-// Call the motivation function
-// motivation();
 
 // Calls the data from json file
 async function createMuscleList() {

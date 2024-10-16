@@ -1,84 +1,84 @@
 {
-    "muscleGroups": [
-        {
-            "key": 1,
-            "name": "Abdominals",
-            "value": "abdominals"
-        },
-        {
-            "key": 2,
-            "name": "Adductors",
-            "value": "adductors"
-        },
-        {
-            "key": 3,
-            "name": "Biceps",
-            "value": "biceps"
-        },
-        {
-            "key": 4,
-            "name": "Calves",
-            "value": "calves"
-        },
-        {
-            "key": 5,
-            "name": "Chest",
-            "value": "chest"
-        },
-        {
-            "key": 6,
-            "name": "Forearms",
-            "value": "forearms"
-        },
-        {
-            "key": 7,
-            "name": "Glutes",
-            "value": "glutes"
-        },
-        {
-            "key": 8,
-            "name": "Hamstrings",
-            "value": "hamstrings"
-        },
-        {
-            "key": 9,
-            "name": "Lats",
-            "value": "lats"
-        },
-        {
-            "key": 10,
-            "name": "Lower Back",
-            "value": "lower_back"
-        },
-        {
-            "key": 11,
-            "name": "Middle Back",
-            "value": "middle_back"
-        },
-        {
-            "key": 12,
-            "name": "Neck",
-            "value": "neck"
-        },
-        {
-            "key": 13,
-            "name": "Quadriceps",
-            "value": "quadriceps"
-        },
-        {
-            "key": 14,
-            "name": "Shoulders",
-            "value": "shoulders"
-        },
-        {
-            "key": 15,
-            "name": "Traps",
-            "value": "traps"
-        },
-        {
-            "key": 16,
-            "name": "Triceps",
-            "value": "triceps"
-        }
-    ]
+  "muscleGroups": [
+    {
+      "key": 1,
+      "name": "Abdominals",
+      "value": "abdominals"
+    },
+    {
+      "key": 2,
+      "name": "Adductors",
+      "value": "adductors"
+    },
+    {
+      "key": 3,
+      "name": "Biceps",
+      "value": "biceps"
+    },
+    {
+      "key": 4,
+      "name": "Calves",
+      "value": "calves"
+    },
+    {
+      "key": 5,
+      "name": "Chest",
+      "value": "chest"
+    },
+    {
+      "key": 6,
+      "name": "Forearms",
+      "value": "forearms"
+    },
+    {
+      "key": 7,
+      "name": "Glutes",
+      "value": "glutes"
+    },
+    {
+      "key": 8,
+      "name": "Hamstrings",
+      "value": "hamstrings"
+    },
+    {
+      "key": 9,
+      "name": "Lats",
+      "value": "lats"
+    },
+    {
+      "key": 10,
+      "name": "Lower Back",
+      "value": "lower_back"
+    },
+    {
+      "key": 11,
+      "name": "Middle Back",
+      "value": "middle_back"
+    },
+    {
+      "key": 12,
+      "name": "Neck",
+      "value": "neck"
+    },
+    {
+      "key": 13,
+      "name": "Quadriceps",
+      "value": "quadriceps"
+    },
+    {
+      "key": 14,
+      "name": "Shoulders",
+      "value": "shoulders"
+    },
+    {
+      "key": 15,
+      "name": "Traps",
+      "value": "traps"
+    },
+    {
+      "key": 16,
+      "name": "Triceps",
+      "value": "triceps"
+    }
+  ]
 }

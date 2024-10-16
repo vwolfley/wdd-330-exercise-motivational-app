@@ -1,4 +1,5 @@
 export function motivation() {
+    // find a random topic from the categories list
     function randomTopic() {
         const categories = [
             "fitness",
@@ -13,14 +14,16 @@ export function motivation() {
             "inspirational",
         ];
         const randomIndex = Math.floor(Math.random() * categories.length);
-        return categories[randomIndex];
+        const topic = categories[randomIndex];
+        return topic;
     }
-    const topic = randomTopic();
 
     // Listen for form submission
-    motivationApiFetch(topic);
+    motivationApiFetch(randomTopic());
+
+    // Fetch data from API
     async function motivationApiFetch(topic) {
-        console.log(topic);
+        // console.log(topic);
         const url = `https://api.api-ninjas.com/v1/quotes?category=${topic}`;
 
         const options = {
@@ -45,6 +48,7 @@ export function motivation() {
     }
 }
 
+// Display the results
 function displayResults(result) {
     // console.log(result);
 
