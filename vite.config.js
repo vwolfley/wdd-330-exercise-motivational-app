@@ -11,7 +11,7 @@ export default defineConfig({
         port: 3000,
         open: true,
     },
-    base: "/<REPO>/",
+    base: "/wdd-330-exercise-motivational-app/",
     build: {
         outDir: "../dist",
         rollupOptions: {
