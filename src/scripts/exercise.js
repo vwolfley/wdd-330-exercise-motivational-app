@@ -66,9 +66,12 @@ async function exerciseApiFetch(type, muscle, difficulty) {
 // type: "strength";
 
 function displayResults(result) {
+    // console.log(result);
     let cardsHTML = "";
 
-    result.forEach((workout) => {
+    // <div class="box"><span class="corner-number">${index}</span></div>
+
+    result.forEach((workout, index) => {
         let diffClass = "";
         if (workout.difficulty === "beginner") {
             diffClass = "beginner";
