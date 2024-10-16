@@ -20,7 +20,6 @@ lerna-debug.log*
 # dependencies
 node_modules/
 jspm_packages/
-package-lock.json
 build
 dist
 dist-ssr
