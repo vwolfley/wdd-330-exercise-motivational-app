@@ -1,5 +1,6 @@
 import { aboutModal } from "./aboutModal.js";
 import { exercise } from "./exercise.js";
+import data from '../data/muscleOptions.json' assert { type: 'json' };
 
 // Call the aboutModal function
 aboutModal();
@@ -50,20 +51,22 @@ function renderMuscleList(result) {
         }
     });
 }
+renderMuscleList(data);
 
 // Calls the data from json file
-async function createMuscleList() {
-    try {
-        const response = await fetch("./data/muscleOptions.json");
-        if (response.ok) {
-            const result = await response.json();
-            // console.log(result);
-            renderMuscleList(result);
-        } else {
-            throw new Error(await response.text());
-        }
-    } catch (error) {
-        console.error(error);
-    }
-}
-createMuscleList();
+// async function createMuscleList() {
+//     console.log(data);
+//     try {
+//         const response = await fetch(data);
+//         if (response.ok) {
+//             const result = await response.json();
+//             // console.log(result);
+//             renderMuscleList(result);
+//         } else {
+//             throw new Error(await response.text());
+//         }
+//     } catch (error) {
+//         console.error(error);
+//     }
+// }
+// createMuscleList();
