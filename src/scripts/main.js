@@ -7,23 +7,6 @@ aboutModal();
 // Call the exercise function
 exercise();
 
-// Calls the data from json file
-async function createMuscleList() {
-    try {
-        const response = await fetch("../data/muscleOptions.json");
-        if (response.ok) {
-            const result = await response.json();
-            // console.log(result);
-            renderMuscleList(result);
-        } else {
-            throw new Error(await response.text());
-        }
-    } catch (error) {
-        console.error(error);
-    }
-}
-createMuscleList();
-
 // Renders the muscle button list
 function renderMuscleList(result) {
     // console.log(result);
@@ -67,3 +50,20 @@ function renderMuscleList(result) {
         }
     });
 }
+
+// Calls the data from json file
+async function createMuscleList() {
+    try {
+        const response = await fetch("./data/muscleOptions.json");
+        if (response.ok) {
+            const result = await response.json();
+            // console.log(result);
+            renderMuscleList(result);
+        } else {
+            throw new Error(await response.text());
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+createMuscleList();
