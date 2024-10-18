@@ -39,16 +39,16 @@ jobs:
           # Add secrets to the environment
       - name: Add API Keys to Environment
         run: |
-          echo "VITE_EXERCISE_API_KEY=${{ secrets.VITE_EXERCISE_API_KEY }}" >> $GITHUB_ENV
-          echo "VITE_MOTIVATION_API_KEY=${{ secrets.VITE_MOTIVATION_API_KEY }}" >> $GITHUB_ENV
+          echo "EXERCISE_API_KEY=${{ secrets.EXERCISE_API_KEY }}" >> $GITHUB_ENV
+          echo "MOTIVATION_API_KEY=${{ secrets.MOTIVATION_API_KEY }}" >> $GITHUB_ENV
 
       - name: Debug Environment Variables
         run: printenv | grep VITE_
 
       - name: Check API Keys (for testing only)
-        run: echo $VITE_EXERCISE_API_KEY
+        run: echo $EXERCISE_API_KEY
         env:
-          VITE_EXERCISE_API_KEY: ${{ secrets.VITE_EXERCISE_API_KEY }}
+          EXERCISE_API_KEY: ${{ secrets.EXERCISE_API_KEY }}
 
       - name: Install dependencies
         run: npm ci
@@ -56,8 +56,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_EXERCISE_API_KEY: ${{ secrets.VITE_EXERCISE_API_KEY }}
-          VITE_MOTIVATION_API_KEY: ${{ secrets.VITE_MOTIVATION_API_KEY }}
+          EXERCISE_API_KEY: ${{ secrets.EXERCISE_API_KEY }}
+          MOTIVATION_API_KEY: ${{ secrets.MOTIVATION_API_KEY }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
