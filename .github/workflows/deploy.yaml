@@ -35,10 +35,21 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+
+          # Add secrets to the environment
+      - name: Add API Keys to Environment
+        run: |
+          echo "VITE_EXERCISE_API_KEY=${{ secrets.VITE_EXERCISE_API_KEY }}" >> $GITHUB_ENV
+          echo "VITE_MOTIVATION_API_KEY=${{ secrets.VITE_MOTIVATION_API_KEY }}" >> $GITHUB_ENV
+
       - name: Install dependencies
         run: npm ci
       - name: Build
         run: npm run build
+        env:
+          VITE_EXERCISE_API_KEY: ${{ secrets.VITE_EXERCISE_API_KEY }}
+          VITE_MOTIVATION_API_KEY: ${{ secrets.VITE_MOTIVATION_API_KEY }}
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
