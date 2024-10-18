@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ['main']
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -17,7 +17,7 @@ permissions:
 
 # Allow one concurrent deployment
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
@@ -34,7 +34,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: "npm"
 
           # Add secrets to the environment
       - name: Add API Keys to Environment
@@ -42,8 +42,19 @@ jobs:
           echo "VITE_EXERCISE_API_KEY=${{ secrets.VITE_EXERCISE_API_KEY }}" >> $GITHUB_ENV
           echo "VITE_MOTIVATION_API_KEY=${{ secrets.VITE_MOTIVATION_API_KEY }}" >> $GITHUB_ENV
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Debug Environment Variables
+        run: printenv | grep VITE_
+
+      - name: Check API Keys (for testing only)
+        run: echo $VITE_EXERCISE_API_KEY
+        env:
+          VITE_EXERCISE_API_KEY: ${{ secrets.VITE_EXERCISE_API_KEY }}
+
+      - name: Clean and Install dependencies
+        run: |
+          npm run clean
+          npm ci
+          
       - name: Build
         run: npm run build
         env:
@@ -56,7 +67,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist folder
-          path: './dist'
+          path: "./dist"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
