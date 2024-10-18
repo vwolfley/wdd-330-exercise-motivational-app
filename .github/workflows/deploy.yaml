@@ -50,11 +50,9 @@ jobs:
         env:
           VITE_EXERCISE_API_KEY: ${{ secrets.VITE_EXERCISE_API_KEY }}
 
-      - name: Clean and Install dependencies
-        run: |
-          npm run clean
-          npm ci
-          
+      - name: Install dependencies
+        run: npm ci
+
       - name: Build
         run: npm run build
         env:
