@@ -31,7 +31,7 @@ export function motivation() {
         const options = {
             method: "GET",
             headers: {
-                "X-Api-Key": `${import.meta.env.VITE_MOTIVATION_API_KEY}`,
+                "X-Api-Key": import.meta.env.VITE_MOTIVATION_API_KEY,
                 "Content-Type": "application/json",
             },
         };
