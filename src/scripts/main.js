@@ -1,6 +1,6 @@
 import { aboutModal } from "./aboutModal.js";
 import { exercise } from "./exercise.js";
-import data from '../data/muscleOptions.json' assert { type: 'json' };
+import data from "../data/muscleOptions.json" assert { type: "json" };
 
 // Call the aboutModal function
 aboutModal();
