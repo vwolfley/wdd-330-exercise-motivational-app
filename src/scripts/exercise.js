@@ -1,4 +1,5 @@
 import { motivation } from "./motivation";
+const EXERCISE_API_KEY = import.meta.env.VITE_EXERCISE_API_KEY;
 
 export function exercise() {
     // Listen for form submission
@@ -36,7 +37,7 @@ async function exerciseApiFetch(type, muscle, difficulty) {
     const options = {
         method: "GET",
         headers: {
-            "X-Api-Key": "JqVU78FmGF8DRs5wmCnWaA==BYYns69uqwTlcmyd",
+            "X-Api-Key": EXERCISE_API_KEY,
             "Content-Type": "application/json",
         },
     };

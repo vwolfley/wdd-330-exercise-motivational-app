@@ -1,3 +1,5 @@
+const MOTIVATION_API_KEY = import.meta.env.VITE_MOTIVATION_API_KEY;
+
 export function motivation() {
     // find a random topic from the categories list
     function randomTopic() {
@@ -29,7 +31,7 @@ export function motivation() {
         const options = {
             method: "GET",
             headers: {
-                "X-Api-Key": "JqVU78FmGF8DRs5wmCnWaA==BYYns69uqwTlcmyd",
+                "X-Api-Key": MOTIVATION_API_KEY,
                 "Content-Type": "application/json",
             },
         };
