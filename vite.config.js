@@ -15,6 +15,7 @@ export default defineConfig({
     build: {
         outDir: "../dist",
         rollupOptions: {
+            external: ["pexels"],
             input: {
                 main: resolve(__dirname, "src/index.html"),
             },
