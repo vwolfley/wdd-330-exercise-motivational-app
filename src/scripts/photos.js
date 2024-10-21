@@ -1,4 +1,4 @@
-import { createClient } from "pexels";
+// import { createClient } from "pexels";
 
 // export function photos(type, muscle) {
 //     // console.log(type);
@@ -36,7 +36,7 @@ export function photos(type, muscle) {
 
     const queryType = typeMap[type] || type;
     const query = `fitness, ${queryType}, ${muscle}`;
-    const apiKey = import.meta.env.VITE_PREXELS_API_KEY; // Your API key
+    const apiKey = import.meta.env.VITE_PREXELS_API_KEY;
 
     async function getPhotos() {
         try {
