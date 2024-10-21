@@ -50,7 +50,7 @@ async function exerciseApiFetch(type, muscle, difficulty) {
             if (result.length === 0) {
                 displayError();
             } else {
-                displayResults(result, type);
+                displayResults(result, type, muscle);
             }
         } else {
             throw new Error(await response.text());
@@ -67,12 +67,13 @@ async function exerciseApiFetch(type, muscle, difficulty) {
 // name: "Incline Hammer Curls";
 // type: "strength";
 
-async function displayResults(result, type) {
+async function displayResults(result, type, muscle) {
     console.log(result, type);
     const photoType = type;
+    const photoMuscle = muscle;
     // Await the photos from the API
     try {
-        const photoData = await photos(photoType);
+        const photoData = await photos(photoType, photoMuscle);
         const photoArray = photoData.photos;
         console.log(photoArray);
 
@@ -137,12 +138,10 @@ async function displayResults(result, type) {
 // Display an error message if no results are found
 function displayError() {
     document.querySelector(".cards").innerHTML = `
-        <article class="card">
-            <div class=card-error>
-                <h2>No Information Available</h2>
-                <p>Sorry, There were no Exercise found for your selection.</p>
-                <p>Please make another selection.
-            </div>
+        <article class="card-error">
+            <h2>No Information Available</h2>
+            <p>Sorry, There were no exercises found for your selection.</p>
+            <p>Please make another selection.
         </article>
     `;
 }

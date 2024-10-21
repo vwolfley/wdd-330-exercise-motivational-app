@@ -55,98 +55,118 @@ h6 {
     font-style: normal;
 }
 
-/* Header Styles */
-#header .nav {
-    display: flex;
+main {
     padding: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--secondary-color);
 }
 
-#header .nav-title {
+/* Header Styles */
+header {
+    background-color: var(--secondary-color);
+    padding: 1rem 1.5rem;
+}
+.navbar {
     display: flex;
-    margin-right: 2.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-title {
+    display: flex;
     gap: 0.5rem;
     align-items: center;
     color: var(--primary-color);
 }
-#header .nav-title img {
+.nav-title img {
     width: 5rem;
     height: 5rem;
 }
-#header .nav-title h1 {
+.nav-title h1 {
     font-size: 2rem;
     line-height: 1.75rem;
     font-weight: 600;
     letter-spacing: -0.025em;
     margin: 0;
 }
-#header .nav-menu {
-    display: block;
-}
-@media (min-width: 1024px) {
-    #header .nav-menu {
-        display: none;
-    }
-}
-#header .nav-toggle {
+.nav-menu {
     display: flex;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    justify-content: space-between;
     align-items: center;
-    border-radius: 0.25rem;
-    border-width: 1px;
+    list-style: none;
 }
-#header .nav-toggle :hover {
+
+.nav-item {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+    margin-left: 5rem;
+    text-decoration: none;
+}
+.nav-link {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-link:hover {
     border-color: #ffffff;
     color: #ffffff;
 }
-#header .nav-toggle svg {
-    width: 0.75rem;
-    height: 0.75rem;
-}
-#header .nav-links {
-    display: block;
-    flex-grow: 1;
-    width: 100%;
-}
-@media (min-width: 1024px) {
-    #header .nav-links {
-        display: flex;
-        align-items: center;
-        width: auto;
-    }
-}
-#header .nav-links div {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-}
-#header .nav-links .link {
-    display: block;
-    margin-top: 1rem;
-    margin-right: 1rem;
-    color: var(--light-grey);
-    font-family: var(--font-heading);
-    font-size: 1.5em;
-    font-weight: 700;
-    text-decoration: none;
-}
-@media (min-width: 1024px) {
-    #header .nav-links .link {
-        display: inline-block;
-        margin-top: 0;
-    }
-}
-#header .nav-links .link :hover {
-    color: #ffffff;
+.hamburger {
+    display: none;
 }
 
-main {
-    padding: 1.5rem;
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -110%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: var(--secondary-color);
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-link {
+        color: #fff;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
 
 /* About Modal */
@@ -283,7 +303,17 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: var(--background);
+    border-radius: 0.5rem;
+    column-gap: 10px;
+    width: 100%;
+    padding: 20px 50px;
 }
+.card-error h2 {
+    color: var(--expert);
+}
+
 /* Stack columns in a single column */
 @media (max-width: 1024px) {
     .card {

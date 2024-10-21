@@ -5,6 +5,26 @@ import data from "../data/muscleOptions.json" assert { type: "json" };
 // Call the aboutModal function
 aboutModal();
 
+// Hamburger menu for Nav Bar
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+
 // Call the exercise function
 exercise();
 
@@ -52,21 +72,3 @@ function renderMuscleList(result) {
     });
 }
 renderMuscleList(data);
-
-// Calls the data from json file
-// async function createMuscleList() {
-//     console.log(data);
-//     try {
-//         const response = await fetch(data);
-//         if (response.ok) {
-//             const result = await response.json();
-//             // console.log(result);
-//             renderMuscleList(result);
-//         } else {
-//             throw new Error(await response.text());
-//         }
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }
-// createMuscleList();
