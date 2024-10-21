@@ -19,6 +19,9 @@
   "repository": "https://github.com/vwolfley/wdd-330-exercise-motivational-app",
   "private": true,
   "license": "MIT",
+  "dependencies": {
+    "pexels": "^1.4.0"
+  },
   "devDependencies": {
     "@eslint/compat": "^1.2.0",
     "@eslint/eslintrc": "^3.1.0",

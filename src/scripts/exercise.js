@@ -1,4 +1,5 @@
 import { motivation } from "./motivation";
+import { photos } from "./photos";
 const EXERCISE_API_KEY = import.meta.env.VITE_EXERCISE_API_KEY;
 
 export function exercise() {
@@ -49,7 +50,7 @@ async function exerciseApiFetch(type, muscle, difficulty) {
             if (result.length === 0) {
                 displayError();
             } else {
-                displayResults(result);
+                displayResults(result, type);
             }
         } else {
             throw new Error(await response.text());
@@ -66,58 +67,71 @@ async function exerciseApiFetch(type, muscle, difficulty) {
 // name: "Incline Hammer Curls";
 // type: "strength";
 
-function displayResults(result) {
-    // console.log(result);
-    let cardsHTML = "";
+async function displayResults(result, type) {
+    console.log(result, type);
+    const photoType = type;
+    // Await the photos from the API
+    try {
+        const photoData = await photos(photoType);
+        const photoArray = photoData.photos;
+        console.log(photoArray);
 
-    // <div class="box"><span class="corner-number">${index}</span></div>
+        let cardsHTML = "";
+        result.forEach((workout, index) => {
+            let cardsImage = "";
 
-    result.forEach((workout, index) => {
-        let diffClass = "";
-        if (workout.difficulty === "beginner") {
-            diffClass = "beginner";
-        } else if (workout.difficulty === "intermediate") {
-            diffClass = "intermediate";
-        } else if (workout.difficulty === "expert") {
-            diffClass = "expert";
-        }
+            const photo = photoArray[index % photoArray.length];
 
-        const workoutCardTemplate = `
-            <article class="card">
-            <h2>${workout.name}</h2>
-            <div class="card-info">
-            <div class="card1">
-                <ul>
-                    <li><strong>Difficulty:</strong> <span class="${diffClass}">${
-                        workout.difficulty.charAt(0).toUpperCase() +
-                        workout.difficulty.slice(1)
-                    }</span></li>
-                    <li><strong>Equipment:</strong> ${
-                        workout.equipment.charAt(0).toUpperCase() +
-                        workout.equipment.slice(1)
-                    }</li>
-                    <li><strong>Type:</strong> ${
-                        workout.type.charAt(0).toUpperCase() +
-                        workout.type.slice(1)
-                    }</li>
-                    <li><strong>Muscle Worked:</strong> ${
-                        workout.muscle.charAt(0).toUpperCase() +
-                        workout.muscle.slice(1)
-                    }</li>
-                </ul>
-                </div>
-                <div class="card2">
-                <p><strong>Instructions:</strong> ${workout.instructions}</p>
-                </div>
-                </div>
-            </article>
-        `;
+            const photoTemplate = `<img class="card-photo" src="${photo.src.medium}" alt="${photo.alt}" />`;
+            cardsImage += photoTemplate;
 
-        cardsHTML += workoutCardTemplate;
-    });
+            let diffClass = "";
+            if (workout.difficulty === "beginner") {
+                diffClass = "beginner";
+            } else if (workout.difficulty === "intermediate") {
+                diffClass = "intermediate";
+            } else if (workout.difficulty === "expert") {
+                diffClass = "expert";
+            }
 
-    // Update the container once, after the loop
-    document.querySelector(".cards").innerHTML = cardsHTML;
+            const workoutCardTemplate = `
+                <article class="card">
+                <div class="card-image">${cardsImage}</div>
+                    <h2 class="card-title">${workout.name}</h2>
+                    <div class="card-info">
+                        <ul>
+                            <li><strong>Difficulty:</strong> <span class="${diffClass}">${
+                                workout.difficulty.charAt(0).toUpperCase() +
+                                workout.difficulty.slice(1)
+                            }</span></li>
+                            <li><strong>Equipment:</strong> ${
+                                workout.equipment.charAt(0).toUpperCase() +
+                                workout.equipment.slice(1)
+                            }</li>
+                            <li><strong>Type:</strong> ${
+                                workout.type.charAt(0).toUpperCase() +
+                                workout.type.slice(1)
+                            }</li>
+                            <li><strong>Muscle Worked:</strong> ${
+                                workout.muscle.charAt(0).toUpperCase() +
+                                workout.muscle.slice(1)
+                            }</li>
+                        </ul>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Instructions:</strong> ${workout.instructions}</p>
+                    </div>
+                </article>
+            `;
+
+            cardsHTML += workoutCardTemplate;
+        });
+
+        // Update the container once, after the loop
+        document.querySelector(".cards").innerHTML = cardsHTML;
+    } catch (error) {
+        console.error("Error in photo processing or display:", error);
+    }
 }
 
 // Display an error message if no results are found
