@@ -41,6 +41,7 @@ jobs:
         run: |
           echo "VITE_EXERCISE_API_KEY=${{ secrets.VITE_EXERCISE_API_KEY }}" >> $GITHUB_ENV
           echo "VITE_MOTIVATION_API_KEY=${{ secrets.VITE_MOTIVATION_API_KEY }}" >> $GITHUB_ENV
+          echo "VITE_PREXELS_API_KEY=${{ secrets.VITE_PREXELS_API_KEY }}" >> $GITHUB_ENV
 
       - name: Debug Environment Variables
         run: printenv | grep VITE_
@@ -58,6 +59,7 @@ jobs:
         env:
           VITE_EXERCISE_API_KEY: ${{ secrets.VITE_EXERCISE_API_KEY }}
           VITE_MOTIVATION_API_KEY: ${{ secrets.VITE_MOTIVATION_API_KEY }}
+          VITE_PREXELS_API_KEY: ${{ secrets.VITE_PREXELS_API_KEY }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

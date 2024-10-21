@@ -1,7 +1,7 @@
 import { createClient } from "pexels";
 
 export function photos(type) {
-    console.log(type);
+    // console.log(type);
 
     const typeMap = {
         strength: "conditioning, exercise",
@@ -13,7 +13,7 @@ export function photos(type) {
 
     const client = createClient(import.meta.env.VITE_PREXELS_API_KEY);
     const query = `fitness, ${queryType}`;
-    console.log(query);
+    // console.log(query);
     async function getPhotos() {
         try {
             const photos = await client.photos.search({ query, per_page: 10 });
