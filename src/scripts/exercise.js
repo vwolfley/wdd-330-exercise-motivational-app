@@ -68,14 +68,14 @@ async function exerciseApiFetch(type, muscle, difficulty) {
 // type: "strength";
 
 async function displayResults(result, type, muscle) {
-    console.log(result, type);
+    // console.log(result, type);
     const photoType = type;
     const photoMuscle = muscle;
     // Await the photos from the API
     try {
         const photoData = await photos(photoType, photoMuscle);
         const photoArray = photoData.photos;
-        console.log(photoArray);
+        // console.log(photoArray);
 
         let cardsHTML = "";
         result.forEach((workout, index) => {

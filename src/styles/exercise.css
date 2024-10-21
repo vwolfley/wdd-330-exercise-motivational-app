@@ -102,14 +102,13 @@ header {
 }
 .nav-link {
     font-size: 1.5rem;
-    font-weight: 400;
-    color: #fff;
+    font-weight: 500;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
 .nav-link:hover {
-    border-color: #ffffff;
-    color: #ffffff;
+    color: #fff;
 }
 .hamburger {
     display: none;
@@ -117,12 +116,12 @@ header {
 
 .bar {
     display: block;
-    width: 25px;
-    height: 3px;
+    width: 45px;
+    height: 7px;
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: #fff;
+    background-color: var(--primary-color);
 }
 
 @media only screen and (max-width: 768px) {
@@ -140,7 +139,7 @@ header {
     }
 
     .nav-link {
-        color: #fff;
+        color: var(--primary-color);
     }
 
     .nav-menu.active {
@@ -161,11 +160,11 @@ header {
     }
 
     .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
+        transform: translateY(12px) rotate(45deg);
     }
 
     .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-12px) rotate(-45deg);
     }
 }
 
