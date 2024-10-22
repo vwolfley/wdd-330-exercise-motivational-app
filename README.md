@@ -59,6 +59,10 @@ Motivational Quotes API
 -   [ZenQuotesIO](https://zenquotes.io/)
 -   [CodeCamp](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
 -   [Quotes@APINinjas](https://api-ninjas.com/api/quotes)
+-   
+
+Example 
+- [quotes](https://quotes-react.netlify.app/)https://quotes-react.netlify.app/
 
 ### Prexels API
 - [Prexels Images](https://www.pexels.com/api/documentation/)

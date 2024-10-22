@@ -86,14 +86,13 @@ async function displayResults(result, type, muscle) {
             const photoTemplate = `<img class="card-photo" src="${photo.src.medium}" alt="${photo.alt}" />`;
             cardsImage += photoTemplate;
 
-            let diffClass = "";
-            if (workout.difficulty === "beginner") {
-                diffClass = "beginner";
-            } else if (workout.difficulty === "intermediate") {
-                diffClass = "intermediate";
-            } else if (workout.difficulty === "expert") {
-                diffClass = "expert";
-            }
+            const difficultyClassMap = {
+                beginner: "beginner",
+                intermediate: "intermediate",
+                expert: "expert",
+            };
+
+            const diffClass = difficultyClassMap[workout.difficulty] || "";
 
             const workoutCardTemplate = `
                 <article class="card">
@@ -101,7 +100,7 @@ async function displayResults(result, type, muscle) {
                     <h2 class="card-title">${workout.name}</h2>
                     <div class="card-info">
                         <ul>
-                            <li><strong>Difficulty:</strong> <span class="${diffClass}">${
+                            <li><strong>Difficulty:</strong> <span class="tag ${diffClass}">${
                                 workout.difficulty.charAt(0).toUpperCase() +
                                 workout.difficulty.slice(1)
                             }</span></li>

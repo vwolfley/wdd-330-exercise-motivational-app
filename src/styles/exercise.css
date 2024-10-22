@@ -226,7 +226,66 @@ header {
     background-color: var(--light-grey);
     border-radius: 4px;
     column-gap: 20px;
-    width: 40%;
+    width: 50%;
+}
+.card-motivation .content {
+    display: flex;
+    flex-direction: column;
+    /* padding: 0 20px 0 20px; */
+}
+.icon-quote {
+    width: 3rem;
+    padding: 0 10px;
+    color: var(--tertiary-color);
+}
+.card-quote {
+    margin: 0 10px;
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+}
+.card-author {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 10px;
+    font-size: 1.75rem;
+    color: var(--tertiary-color);
+}
+.card-category {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 10px;
+    font-size: 0.75rem;
+    color: var(--secondary-color);
+}
+.life {
+    background-color: #C492B1;
+}
+.fitness {
+    background-color: #823038;
+}
+.best {
+    background-color: #0D3B66;
+}
+.change {
+    background-color: #A0EADE;
+}
+.success {
+    background-color: #7E007B;
+}
+.attitude {
+    background-color: #8ACB88;
+}
+.courage {
+    background-color: #FE938C;
+}
+.failure {
+    background-color: #E8C547;
+}
+.health {
+    background-color: #09814a;
+}
+.inspirational {
+    background-color: #5941A9;
 }
 
 /* Exercise Cards */
@@ -259,7 +318,7 @@ header {
 
 .card {
     display: grid;
-    grid-template-columns: 0.8fr 0.8fr 3fr;
+    grid-template-columns: 0.8fr 1.2fr 3fr;
     grid-template-rows: 0.25fr 1fr;
     grid-template-areas:
         "image title title"
@@ -292,7 +351,7 @@ header {
 }
 .card-content {
     display: flex;
-    padding: 0 20px 0 0;
+    padding: 0 20px 15px 0;
 }
 .card-content p {
     margin: 0;
@@ -445,6 +504,9 @@ button[type="submit"] {
     font-size: 1.2rem;
     font-weight: 600;
 }
+button[type="submit"]:hover {
+    background-color: #07673b;
+}
 
 /* CSS  Button*/
 .button-muscle {
@@ -468,37 +530,18 @@ button[type="submit"] {
 .button-muscle.active {
     background-color: #005f7f;
 }
-.icon-quote {
-    width: 3rem;
-    padding: 0 10px;
-    color: var(--tertiary-color);
-}
-.card-quote {
-    margin: 0 10px;
-    font-size: 1.25rem;
-    color: var(--secondary-color);
-}
-.card-author {
-    margin: 0 10px;
-    font-size: 1.75rem;
-    float: right;
-    color: var(--tertiary-color);
+
+.tag {
+    padding: 0.25rem 0.35rem;
+    border-radius: 5px;
+    color: white;
 }
 .beginner {
     background-color: var(--beginner);
-    color: white;
-    padding: 0.25rem 0.35rem;
-    border-radius: 5px;
 }
 .intermediate {
     background-color: var(--intermediate);
-    color: white;
-    padding: 0.25rem 0.35rem;
-    border-radius: 5px;
 }
 .expert {
     background-color: var(--expert);
-    color: white;
-    padding: 0.25rem 0.35rem;
-    border-radius: 5px;
 }
