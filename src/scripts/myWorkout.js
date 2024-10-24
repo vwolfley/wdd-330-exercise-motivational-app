@@ -8,7 +8,7 @@ export function myWorkout() {
 
         // Call local storage
         const storedUserData = localStorage.getItem("myWorkouts");
-        if (storedUserData.length != 0) {
+        if (storedUserData.length != 0 || storedUserData != null) {
             const userData = JSON.parse(storedUserData);
             displayResults(userData);
         } else {
