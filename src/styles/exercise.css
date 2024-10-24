@@ -258,34 +258,34 @@ header {
     color: var(--secondary-color);
 }
 .life {
-    background-color: #C492B1;
+    background-color: #c492b1;
 }
 .fitness {
     background-color: #823038;
 }
 .best {
-    background-color: #0D3B66;
+    background-color: #0d3b66;
 }
 .change {
-    background-color: #A0EADE;
+    background-color: #a0eade;
 }
 .success {
-    background-color: #7E007B;
+    background-color: #7e007b;
 }
 .attitude {
-    background-color: #8ACB88;
+    background-color: #8acb88;
 }
 .courage {
-    background-color: #FE938C;
+    background-color: #fe938c;
 }
 .failure {
-    background-color: #E8C547;
+    background-color: #e8c547;
 }
 .health {
     background-color: #09814a;
 }
 .inspirational {
-    background-color: #5941A9;
+    background-color: #5941a9;
 }
 
 /* Exercise Cards */
@@ -348,6 +348,14 @@ header {
 }
 .card-info {
     display: flex;
+    flex-direction: column;
+}
+.card-info ul {
+    text-align: left;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
 }
 .card-content {
     display: flex;
@@ -440,6 +448,13 @@ header {
 #exerciseInfo img {
     width: 70px;
 }
+#exerciseInfo p {
+    margin: 0.25rem 0;
+}
+#exerciseInfo .container h4 {
+    font-size: 1.25rem;
+    margin: 1.5rem 0 0 0;
+}
 .mOptions {
     display: flex;
     flex-direction: row;
@@ -510,18 +525,8 @@ button[type="submit"]:hover {
 
 /* CSS  Button*/
 .button-muscle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 6px 14px;
-    border-radius: 6px;
-    border: none;
     color: #fff;
-    font-size: 18px;
-    font-weight: 600;
     background-color: var(--primary-color);
-    background-origin: border-box;
-    cursor: pointer;
 }
 
 .button-muscle:hover {
@@ -544,4 +549,43 @@ button[type="submit"]:hover {
 }
 .expert {
     background-color: var(--expert);
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    background-origin: border-box;
+    cursor: pointer;
+}
+
+#myworkout {
+    color: #fff;
+    background-color: var(--secondary-color);
+    width: 180px;
+}
+#myworkout:hover {
+    background-color: #4d627a;
+}
+
+.button-workout {
+    color: #fff;
+    background-color: var(--tertiary-color);
+    width: 50%;
+}
+.button-workout:hover {
+    background-color: #07673b;
+}
+.remove-workout {
+    color: #fff;
+    background-color: var(--accent-color);
+    width: 50%;
+}
+.remove-workout:hover {
+    background-color: #ff9f1c;
 }

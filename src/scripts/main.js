@@ -1,5 +1,6 @@
 import { aboutModal } from "./aboutModal.js";
 import { exercise } from "./exercise.js";
+import { myWorkout } from "./myWorkout.js";
 import data from "../data/muscleOptions.json" assert { type: "json" };
 
 // Call the aboutModal function
@@ -27,6 +28,8 @@ function closeMenu() {
 
 // Call the exercise function
 exercise();
+// Call the myWorkout function
+myWorkout();
 
 // Renders the muscle button list
 function renderMuscleList(result) {
@@ -38,6 +41,7 @@ function renderMuscleList(result) {
     muscles.forEach((muscle) => {
         const muscleButton = document.createElement("button");
         muscleButton.textContent = muscle.name;
+        muscleButton.classList.add("btn");
         muscleButton.classList.add("button-muscle");
         muscleButton.setAttribute("data-muscle", muscle.value);
         muscleList.appendChild(muscleButton);
