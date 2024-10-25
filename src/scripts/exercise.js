@@ -1,29 +1,30 @@
 import { motivation } from "./motivation";
 import { photos } from "./photos";
 const EXERCISE_API_KEY = import.meta.env.VITE_EXERCISE_API_KEY;
+import checkmark from "../images/check-mark-1292787_640.png";
 
 export function exercise() {
     // Listen for form submission
-    document
-        .getElementById("exerciseForm")
-        .addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent the form from submitting the traditional way
+    const form = document.getElementById("exerciseForm");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
 
-            // Get the value from the input field
-            const muscle = document.getElementById("muscle").value.trim();
-            const exerciseType = document
-                .getElementById("exerciseType")
-                .value.trim();
-            const difficulty = document
-                .getElementById("difficulty")
-                .value.trim();
+        // Get the value from the input fields
+        const muscle = document.getElementById("muscle").value.trim();
+        const exerciseType = document
+            .getElementById("exerciseType")
+            .value.trim();
+        const difficulty = document.getElementById("difficulty").value.trim();
 
-            // Call the motivation function
-            motivation();
+        // Call the motivation function
+        motivation();
 
-            // Call the API function with the city name
-            exerciseApiFetch(exerciseType, muscle, difficulty);
-        });
+        // Call the API function with the exercise data
+        exerciseApiFetch(exerciseType, muscle, difficulty);
+
+        // Reset the form fields after submission
+        form.reset();
+    });
 }
 
 // const muscle = "biceps";
@@ -119,6 +120,7 @@ async function displayResults(result, type, muscle) {
                         </ul>
                         <div class="button-container">
                             <button class="btn button-workout">Add to Workout</button>
+                            <img class="green-check" src="${checkmark}" alt="green check mark" />
                         </div>
                     </div>
                     <div class="card-content">
@@ -142,6 +144,9 @@ async function displayResults(result, type, muscle) {
             const cardInfo = event.target.closest(".card");
 
             addToWorkout(cardInfo);
+            cardInfo.querySelector(".green-check").classList.add("active");
+            // Disable the button
+            button.disabled = true;
         });
     });
 }

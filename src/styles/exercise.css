@@ -7,6 +7,7 @@
     --secondary-color: #021f41;
     --tertiary-color: #09814a;
     --accent-color: #ff9f1c;
+    --accent-color2: #BB342F;
     --light-grey: #edeef0;
     --dark-grey: #2f2f30;
     --background: #fdfdfd;
@@ -346,6 +347,10 @@ header {
     object-fit: cover;
     border-radius: 0.5rem 0 0 0.5rem;
 }
+.alt {
+    background-color: var(--secondary-color);
+    border-radius: 0.5rem 0 0 0.5rem;
+}
 .card-info {
     display: flex;
     flex-direction: column;
@@ -583,9 +588,32 @@ button[type="submit"]:hover {
 }
 .remove-workout {
     color: #fff;
-    background-color: var(--accent-color);
+    background-color: var(--accent-color2);
     width: 50%;
 }
 .remove-workout:hover {
-    background-color: #ff9f1c;
+    background-color: #952925;
+}
+
+.green-check {
+    width: auto;
+    height: 30px;
+    display: none;
+    padding-left: 5px;
+}
+.green-check.active {
+    display: block;
+}
+
+button[disabled] {
+    cursor: not-allowed; 
+    opacity: 0.5;        
+}
+
+.image-bg{
+    background-color: var(--secondary-color);
+}
+.about-logo {
+    width: 3rem;
+    height: 3rem;
 }

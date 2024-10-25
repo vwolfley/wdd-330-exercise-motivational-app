@@ -1,4 +1,5 @@
 import { motivation } from "./motivation";
+import exerciseLogo from '../images/exercise_logo.png';
 
 export function myWorkout() {
     // Listen for form submission
@@ -6,11 +7,18 @@ export function myWorkout() {
         // Call the motivation function
         motivation();
 
-        // Call local storage
+        // Retrieve data from local storage
         const storedUserData = localStorage.getItem("myWorkouts");
-        if (storedUserData.length != 0 || storedUserData != null) {
-            const userData = JSON.parse(storedUserData);
-            displayResults(userData);
+
+        // Check if stored data exists and is not null or empty
+        if (storedUserData && storedUserData.length > 0) {
+            try {
+                const userData = JSON.parse(storedUserData);
+                displayResults(userData);
+            } catch (error) {
+                console.error("Error parsing stored data:", error);
+                displayError();
+            }
         } else {
             console.log("User data not found in local storage");
             displayError();
@@ -24,16 +32,19 @@ async function displayResults(result) {
     try {
         let cardsHTML = "";
         result.forEach((workout, index) => {
+            console.log(workout);
+
             const difficultyClassMap = {
-                beginner: "beginner",
-                intermediate: "intermediate",
-                expert: "expert",
+                Beginner: "beginner",
+                Intermediate: "intermediate",
+                Expert: "expert",
             };
 
             const diffClass = difficultyClassMap[workout.difficulty] || "";
 
             const workoutCardTemplate = `
                 <article class="card">
+                <div class="card-image alt"><img class="card-photo" src="${exerciseLogo}" alt="exercise logo" /></div>
                     <h2 class="card-title">${workout.name}</h2>
                     <div class="card-info">
                         <ul>
@@ -80,6 +91,7 @@ async function displayResults(result) {
             const cardInfo = event.target.closest(".card");
 
             removeFromWorkout(cardInfo);
+            cardInfo.remove();
         });
     });
 }

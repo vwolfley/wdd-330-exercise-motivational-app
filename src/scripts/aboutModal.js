@@ -1,3 +1,5 @@
+import logo from "../images/exercise_logo.png";
+
 export function aboutModal() {
     renderAboutModal();
     // Get modal element
@@ -35,8 +37,10 @@ function renderAboutModal() {
                     <span class="close">&times;</span>
                 </div>
                 <div class="modal-body">
+                <div class="image-bg" ><img src="${logo}" alt="Exercise Logo" class="about-logo"></div>
+                
                     <h3>Exercise and Motivational App</h3>
-                    <p>Interactive webpage that gives exercise information as well motivational quotes.</p>
+                    <p>Stay active and inspired with our interactive app! Discover a variety of exercises and receive motivational quotes to keep you going. When you find an exercise you love, simply add it to your personal workout plan using the <strong>My Workout</strong> button.</p>
                 </div>
             </div>
           </div>`;
