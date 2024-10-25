@@ -320,7 +320,7 @@ header {
 .card {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr 3fr;
-    grid-template-rows: 0.25fr 1fr;
+    grid-template-rows: 0.15fr 1fr;
     grid-template-areas:
         "image title title"
         "image info content";

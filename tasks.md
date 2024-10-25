@@ -30,3 +30,19 @@ Source: https://github.com/vwolfley/wdd-330-exercise-motivational-app/scripts/ab
 Site: https://vwolfley.github.io/wdd-330-exercise-motivational-app/
 
 ## Week 6 Report
+
+Task: Added Github Actions so that the project is built and api keys are kept hidden
+Source: https://github.com/vwolfley/wdd-330-exercise-motivational-app/.github/workflows/deploy.yaml
+Site: https://vwolfley.github.io/wdd-330-exercise-motivational-app/
+
+Task: Added Local Storage so user can save favorite workouts
+Source: https://github.com/vwolfley/wdd-330-exercise-motivational-app/scripts/myWorkout.js
+Site: https://vwolfley.github.io/wdd-330-exercise-motivational-app/
+
+Task: Added ability to add and remove from local storage and card shown
+Source: https://github.com/vwolfley/wdd-330-exercise-motivational-app/scripts/myWorkout.js
+Site: https://vwolfley.github.io/wdd-330-exercise-motivational-app/
+
+Task: Worked on making the app responsive
+Source: https://github.com/vwolfley/wdd-330-exercise-motivational-app/styles/exercise.css
+Site: https://vwolfley.github.io/wdd-330-exercise-motivational-app/
