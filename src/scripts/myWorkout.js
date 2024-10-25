@@ -11,7 +11,7 @@ export function myWorkout() {
         const storedUserData = localStorage.getItem("myWorkouts");
 
         // Check if stored data exists and is not null or empty
-        if (storedUserData && storedUserData.length > 0) {
+        if (storedUserData && storedUserData.length > 2) {
             try {
                 const userData = JSON.parse(storedUserData);
                 displayResults(userData);
@@ -32,7 +32,7 @@ async function displayResults(result) {
     try {
         let cardsHTML = "";
         result.forEach((workout, index) => {
-            console.log(workout);
+            // console.log(workout);
 
             const difficultyClassMap = {
                 Beginner: "beginner",
