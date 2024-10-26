@@ -1,9 +1,7 @@
-# Simple workflow for creating a release in GitHub
-name: Create Release
+name: Create New Release
 
 on:
   push:
-    # Sequence of patterns matched against refs/tags
     tags:
       - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
 
@@ -13,18 +11,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Create Release
+        uses: actions/checkout@v3
+
+      - name: Get Changelog
+        id: changelog
+        run: |
+          echo "log=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'- %s')" >> $GITHUB_ENV
+
+      - name: Create Zip for Release
+        run: zip -r site.zip path/to/your/site
+
+      - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           body: |
-            Changes in this Release
-            - First Change
-            - Second Change
+            Changes in this Release:
+            ${{ env.log }}
           draft: false
           prerelease: false
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./site.zip
+          asset_name: asset.zip
+          asset_content_type: application/zip
