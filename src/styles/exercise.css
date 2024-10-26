@@ -7,7 +7,7 @@
     --secondary-color: #021f41;
     --tertiary-color: #09814a;
     --accent-color: #ff9f1c;
-    --accent-color2: #BB342F;
+    --accent-color2: #bb342f;
     --light-grey: #edeef0;
     --dark-grey: #2f2f30;
     --background: #fdfdfd;
@@ -210,6 +210,26 @@ header {
     width: 80%; /* Could be more or less, depending on screen size */
     max-width: 600px;
     text-align: center;
+}
+
+.image-bg {
+    background-color: var(--secondary-color);
+}
+.about-logo {
+    width: 3rem;
+    height: 3rem;
+}
+
+#aboutModal {
+    /* Hidden by default */
+    display: none;
+}
+#aboutModal.show {
+    display: block;
+}
+
+.legal{
+    font-size: .75rem;
 }
 
 /* Motivation Card */
@@ -606,14 +626,6 @@ button[type="submit"]:hover {
 }
 
 button[disabled] {
-    cursor: not-allowed; 
-    opacity: 0.5;        
-}
-
-.image-bg{
-    background-color: var(--secondary-color);
-}
-.about-logo {
-    width: 3rem;
-    height: 3rem;
+    cursor: not-allowed;
+    opacity: 0.5;
 }
