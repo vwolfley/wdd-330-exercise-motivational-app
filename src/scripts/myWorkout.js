@@ -1,12 +1,9 @@
 import { motivation } from "./motivation";
-import exerciseLogo from '../images/exercise_logo.png';
+import exerciseLogo from "../images/exercise_logo.png";
 
 export function myWorkout() {
     // Listen for form submission
     document.getElementById("myworkout").addEventListener("click", function () {
-        // Call the motivation function
-        motivation();
-
         // Retrieve data from local storage
         const storedUserData = localStorage.getItem("myWorkouts");
 
@@ -23,6 +20,8 @@ export function myWorkout() {
             console.log("User data not found in local storage");
             displayError();
         }
+        // Call the motivation function
+        motivation();
     });
 }
 

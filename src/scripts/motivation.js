@@ -20,9 +20,6 @@ export function motivation() {
         return topic;
     }
 
-    // Listen for form submission
-    motivationApiFetch(randomTopic());
-
     // Fetch data from API
     async function motivationApiFetch(topic) {
         // console.log(topic);
@@ -48,6 +45,8 @@ export function motivation() {
             console.error(error);
         }
     }
+    // Listen for form submission
+    motivationApiFetch(randomTopic());
 }
 
 // Display the results
