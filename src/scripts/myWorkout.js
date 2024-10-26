@@ -105,6 +105,51 @@ function displayError() {
     `;
 }
 
+function getWorkoutDetails(cardInfo) {
+    // console.log(cardInfo);
+    const workoutName = cardInfo.querySelector(".card-title").innerHTML;
+
+    const workoutDifficulty = cardInfo.querySelector(".workoutDiff").innerHTML;
+
+    let workoutEquipment = cardInfo.querySelector(".workoutEquip");
+    workoutEquipment = workoutEquipment.innerHTML
+        .replace(workoutEquipment.querySelector("strong").outerHTML, "")
+        .trim();
+
+    let workoutType = cardInfo.querySelector(".workoutType");
+    workoutType = workoutType.innerHTML
+        .replace(workoutType.querySelector("strong").outerHTML, "")
+        .trim();
+
+    let workoutMuscle = cardInfo.querySelector(".workoutMuscle");
+    workoutMuscle = workoutMuscle.innerHTML
+        .replace(workoutMuscle.querySelector("strong").outerHTML, "")
+        .trim();
+
+    let workoutInstructions = cardInfo.querySelector(".card-content p");
+    workoutInstructions = workoutInstructions.innerHTML
+        .replace(workoutInstructions.querySelector("strong").outerHTML, "")
+        .trim();
+
+    return {
+        name: workoutName,
+        difficulty: workoutDifficulty,
+        equipment: workoutEquipment,
+        type: workoutType,
+        muscle: workoutMuscle,
+        instructions: workoutInstructions,
+    };
+}
+
+function addToLocalStorage(exercise) {
+    // Retrieve the existing workouts from localStorage (if any)
+    let exercises = JSON.parse(localStorage.getItem("myWorkouts")) || [];
+    // Add the new exercise to the array
+    exercises.push(exercise);
+    // Save the updated array back to localStorage
+    localStorage.setItem("myWorkouts", JSON.stringify(exercises));
+}
+
 function removeFromWorkout(cardInfo) {
     // console.log(cardInfo);
     const workoutName = cardInfo.querySelector(".card-title").innerHTML;
@@ -114,4 +159,9 @@ function removeFromWorkout(cardInfo) {
     exercises = exercises.filter((exercise) => exercise.name !== workoutName);
     // Save the updated array back to localStorage
     localStorage.setItem("myWorkouts", JSON.stringify(exercises));
+}
+
+export function addToWorkout(cardInfo) {
+    const exercise = getWorkoutDetails(cardInfo);
+    addToLocalStorage(exercise);
 }

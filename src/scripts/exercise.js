@@ -1,7 +1,8 @@
 import { motivation } from "./motivation";
 import { photos } from "./photos";
-const EXERCISE_API_KEY = import.meta.env.VITE_EXERCISE_API_KEY;
+import { addToWorkout } from "./myWorkout";
 import checkmark from "../images/check-mark-1292787_640.png";
+const EXERCISE_API_KEY = import.meta.env.VITE_EXERCISE_API_KEY;
 
 export function exercise() {
     // Listen for form submission
@@ -83,10 +84,10 @@ async function displayResults(result, type, muscle) {
             let cardsImage = "";
 
             const photo = photoArray[index % photoArray.length];
-
+            // create the photo template
             const photoTemplate = `<img class="card-photo" src="${photo.src.medium}" alt="${photo.alt}" />`;
             cardsImage += photoTemplate;
-
+            // create css class for difficulty
             const difficultyClassMap = {
                 beginner: "beginner",
                 intermediate: "intermediate",
@@ -94,7 +95,7 @@ async function displayResults(result, type, muscle) {
             };
 
             const diffClass = difficultyClassMap[workout.difficulty] || "";
-
+            // create the card template
             const workoutCardTemplate = `
                 <article class="card">
                 <div class="card-image">${cardsImage}</div>
@@ -142,11 +143,11 @@ async function displayResults(result, type, muscle) {
     document.querySelectorAll(".button-workout").forEach((button) => {
         button.addEventListener("click", function (event) {
             const cardInfo = event.target.closest(".card");
-
-            addToWorkout(cardInfo);
             cardInfo.querySelector(".green-check").classList.add("active");
             // Disable the button
             button.disabled = true;
+            // Add the workout to the workout list
+            addToWorkout(cardInfo);
         });
     });
 }
@@ -160,54 +161,4 @@ function displayError() {
             <p>Please make another selection.
         </article>
     `;
-}
-
-function getWorkoutDetails(cardInfo) {
-    // console.log(cardInfo);
-    const workoutName = cardInfo.querySelector(".card-title").innerHTML;
-
-    const workoutDifficulty = cardInfo.querySelector(".workoutDiff").innerHTML;
-
-    let workoutEquipment = cardInfo.querySelector(".workoutEquip");
-    workoutEquipment = workoutEquipment.innerHTML
-        .replace(workoutEquipment.querySelector("strong").outerHTML, "")
-        .trim();
-
-    let workoutType = cardInfo.querySelector(".workoutType");
-    workoutType = workoutType.innerHTML
-        .replace(workoutType.querySelector("strong").outerHTML, "")
-        .trim();
-
-    let workoutMuscle = cardInfo.querySelector(".workoutMuscle");
-    workoutMuscle = workoutMuscle.innerHTML
-        .replace(workoutMuscle.querySelector("strong").outerHTML, "")
-        .trim();
-
-    let workoutInstructions = cardInfo.querySelector(".card-content p");
-    workoutInstructions = workoutInstructions.innerHTML
-        .replace(workoutInstructions.querySelector("strong").outerHTML, "")
-        .trim();
-
-    return {
-        name: workoutName,
-        difficulty: workoutDifficulty,
-        equipment: workoutEquipment,
-        type: workoutType,
-        muscle: workoutMuscle,
-        instructions: workoutInstructions,
-    };
-}
-
-function addToLocalStorage(exercise) {
-    // Retrieve the existing workouts from localStorage (if any)
-    let exercises = JSON.parse(localStorage.getItem("myWorkouts")) || [];
-    // Add the new exercise to the array
-    exercises.push(exercise);
-    // Save the updated array back to localStorage
-    localStorage.setItem("myWorkouts", JSON.stringify(exercises));
-}
-
-function addToWorkout(cardInfo) {
-    const exercise = getWorkoutDetails(cardInfo);
-    addToLocalStorage(exercise);
 }
