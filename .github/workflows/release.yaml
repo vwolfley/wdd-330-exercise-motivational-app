@@ -7,11 +7,16 @@ on:
 
 jobs:
   build:
-    name: Create Release
+    name: Create New Release
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
 
       - name: Get Changelog
         id: changelog
@@ -19,7 +24,7 @@ jobs:
           echo "log=$(git log $(git describe --tags --abbrev=0)..HEAD --pretty=format:'- %s')" >> $GITHUB_ENV
 
       - name: Create Zip for Release
-        run: zip -r site.zip path/to/your/site
+        run: zip -r site.zip dist
 
       - name: Create GitHub Release
         id: create_release
