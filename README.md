@@ -54,30 +54,30 @@ https://coolors.co/009cde-021f41-edeef0-29f1c-09814a
 
 ### Attributions
 
-<a href="https://www.freepik.com/icon/muscle_7493114">Icon by Peerapak Takpho</a>
-<a href="https://www.freepik.com/icon/muscle_7493103">Icon by Peerapak Takpho</a>
-Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a>
-Image by <a href="https://pixabay.com/users/openclipart-vectors-30363/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1292787">OpenClipart-Vectors</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1292787">Pixabay</a>
+- <a href="https://www.freepik.com/icon/muscle_7493114">Icon by Peerapak Takpho</a>
+- <a href="https://www.freepik.com/icon/muscle_7493103">Icon by Peerapak Takpho</a>
+ - Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a>
+ - Image by <a href="https://pixabay.com/users/openclipart-vectors-30363/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1292787">OpenClipart-Vectors</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1292787">Pixabay</a>
 
 ### External API Data Source
 
 Exercise API
 
--   [Exercises@APINinjas](https://api-ninjas.com/api/exercises)https://api-ninjas.com/api/exercises
+-   [Exercises@APINinjas](https://api-ninjas.com/api/exercises)
 
 Motivational Quotes API
 
--   [ZenQuotesIO](https://zenquotes.io/)https://zenquotes.io/
+-   [Quotes@APINinjas](https://api-ninjas.com/api/quotes)
+
+Photos API
+
+-   [Prexels Images](https://www.pexels.com/api/documentation/)
+
+Examples
+
+-   [quotes](https://quotes-react.netlify.app/)
+-   [ZenQuotesIO](https://zenquotes.io/)
 -   [CodeCamp](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
--   [Quotes@APINinjas](https://api-ninjas.com/api/quotes)https://api-ninjas.com/api/quotes
-
-Example
-
--   [quotes](https://quotes-react.netlify.app/)https://quotes-react.netlify.app/
-
-### Prexels API
-
--   [Prexels Images](https://www.pexels.com/api/documentation/)https://www.pexels.com/api/documentation/
 
 ## Technologies
 
