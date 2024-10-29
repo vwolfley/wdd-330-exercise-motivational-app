@@ -33,6 +33,7 @@ function renderAboutModal() {
                 
                     <h3>Exercise and Motivational App</h3>
                     <p>Stay active and inspired with our interactive app! Discover a variety of exercises and receive motivational quotes to keep you going. When you find an exercise you love, simply add it to your personal workout plan using the <strong>My Workout</strong> button.</p>
+                    <p class="">This application was build as a demonstration application for WDD 330 - Web Frontend Development II at BYU-I.</p>
                 </div>
                 <div class="modal-footer">
                 <p class="legal"> &copy; ${docConfig.copyright} Vern Wolfley | ${docConfig.version} | ${docConfig.date}</p>

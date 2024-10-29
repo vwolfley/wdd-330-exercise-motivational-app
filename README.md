@@ -11,6 +11,8 @@ The goal of this project is to create a simple app that offers workout ideas and
 
 ## Exercise and Motivational App
 
+This application was build as a demonstration application for WDD 330 - Web Frontend Development II at BYU-I.
+
 ### Idea
 
 The goal of this project is to create a simple app that offers workout ideas and personalized motivational messages to help users stay motivated and achieve their fitness goals. The app will provide workout suggestions based on user preferences and feature a motivational feed to inspire consistency and foster a positive mindset.
@@ -61,20 +63,21 @@ Image by <a href="https://pixabay.com/users/openclipart-vectors-30363/?utm_sourc
 
 Exercise API
 
--   [Exercises@APINinjas](https://api-ninjas.com/api/exercises)
+-   [Exercises@APINinjas](https://api-ninjas.com/api/exercises)https://api-ninjas.com/api/exercises
 
 Motivational Quotes API
 
--   [ZenQuotesIO](https://zenquotes.io/)
+-   [ZenQuotesIO](https://zenquotes.io/)https://zenquotes.io/
 -   [CodeCamp](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
--   [Quotes@APINinjas](https://api-ninjas.com/api/quotes)
--   
+-   [Quotes@APINinjas](https://api-ninjas.com/api/quotes)https://api-ninjas.com/api/quotes
 
-Example 
-- [quotes](https://quotes-react.netlify.app/)https://quotes-react.netlify.app/
+Example
+
+-   [quotes](https://quotes-react.netlify.app/)https://quotes-react.netlify.app/
 
 ### Prexels API
-- [Prexels Images](https://www.pexels.com/api/documentation/)
+
+-   [Prexels Images](https://www.pexels.com/api/documentation/)https://www.pexels.com/api/documentation/
 
 ## Technologies
 
@@ -97,6 +100,6 @@ Copyright 2024 Vern Wolfley
 
 This project is licensed under the MIT license.
 
-- [LICENSE](LICENSE)
+-   [LICENSE](LICENSE)
 
 [(Back to top)](#wdd-330-exercise-motivational-app)
